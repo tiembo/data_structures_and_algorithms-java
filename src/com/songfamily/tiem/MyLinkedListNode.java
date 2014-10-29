@@ -5,7 +5,7 @@ public class MyLinkedListNode {
     private MyLinkedListNode nextNode = null;
 
     public MyLinkedListNode(String s) {
-        this.payload = s;
+        payload = s;
     }
 
     public String getPayload() {
@@ -13,7 +13,7 @@ public class MyLinkedListNode {
     }
 
     public void setNextNode(MyLinkedListNode n) {
-        this.nextNode = n;
+        nextNode = n;
     }
 
     public MyLinkedListNode getNextNode() {

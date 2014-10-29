@@ -4,13 +4,13 @@ public class MyLinkedList {
     private MyLinkedListNode rootNode;
 
     public MyLinkedList() {
-        this.rootNode = null;
+        rootNode = null;
     }
 
     public void add(String s) {
         MyLinkedListNode newNode = new MyLinkedListNode(s);
         if (rootNode == null) {
-            this.rootNode = newNode;
+            rootNode = newNode;
         } else {
             MyLinkedListNode current = rootNode;
 
