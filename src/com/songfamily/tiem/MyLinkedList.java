@@ -23,6 +23,37 @@ public class MyLinkedList {
         }
     }
 
+    public void reverse() {
+
+        // don't process if list has 0 or 1 element
+        if (rootNode != null && rootNode.getNextNode() != null) {
+            MyLinkedListNode nextNode = rootNode.getNextNode();
+            MyLinkedListNode nextNextNode = nextNode.getNextNode();
+
+            rootNode.setNextNode(null);
+            nextNode.setNextNode(rootNode);
+
+            // two element linked list
+            if (nextNextNode == null) {
+                rootNode = nextNode;
+                return;
+            }
+
+            MyLinkedListNode previous = nextNode;
+            MyLinkedListNode current = nextNextNode;
+
+            while (current != null) {
+                nextNode = current.getNextNode();
+                current.setNextNode(previous);
+
+                previous = current;
+                current = nextNode;
+            }
+
+            rootNode = previous;
+        }
+    }
+
     public String toString() {
         if (rootNode == null) {
             return null;
