@@ -1,6 +1,5 @@
-package com.songfamily.tiem.test;
+package com.songfamily.tiem;
 
-import com.songfamily.tiem.MyLinkedList;
 import org.junit.Assert;
 import org.junit.Test;
 
