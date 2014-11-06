@@ -63,6 +63,21 @@ public class Utils {
         }
     }
 
+    public static boolean isPalindrome(String s) {
+        int strlen = s.length();
+        char beginning, end;
+
+        for (int i = 0; i < strlen / 2; i++) {
+            beginning = s.charAt(i);
+            end = s.charAt(strlen - i - 1);
+            if (Character.compare(beginning, end) != 0) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
     private static int charToInt(char c) {
         switch (c) {
             case '0': return 0;

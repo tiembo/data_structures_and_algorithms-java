@@ -25,4 +25,15 @@ public class UtilsTest {
         Assert.assertEquals("abc", Utils.reverseWords("abc"));
         Assert.assertEquals("baz bar foo", Utils.reverseWords("foo bar baz"));
     }
+
+    @Test
+    public void testIsPalindrome() throws Exception {
+        Assert.assertTrue(Utils.isPalindrome(""));
+        Assert.assertTrue(Utils.isPalindrome("a"));
+        Assert.assertTrue(Utils.isPalindrome("abba"));
+        Assert.assertTrue(Utils.isPalindrome("abcba"));
+
+        Assert.assertFalse(Utils.isPalindrome("ab"));
+        Assert.assertFalse(Utils.isPalindrome("abcde"));
+    }
 }
