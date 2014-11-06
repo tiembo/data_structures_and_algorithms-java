@@ -18,4 +18,11 @@ public class UtilsTest {
         Assert.assertEquals(0, Utils.atoi("foo"));
         Assert.assertEquals(0, Utils.atoi("123bar"));
     }
+
+    @Test
+    public void testReverseWords() throws Exception {
+        Assert.assertEquals("", Utils.reverseWords(""));
+        Assert.assertEquals("abc", Utils.reverseWords("abc"));
+        Assert.assertEquals("baz bar foo", Utils.reverseWords("foo bar baz"));
+    }
 }

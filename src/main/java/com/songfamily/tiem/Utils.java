@@ -37,6 +37,32 @@ public class Utils {
         }
     }
 
+    public static String reverseWords(String s) {
+        String reversed = "";
+        String tmp = "";
+
+        for (int i = s.length() - 1; i >= 0; i--) {
+            char c = s.charAt(i);
+
+            if (Character.compare(c, ' ') == 0) {
+                if (reversed.isEmpty()) {
+                    reversed = tmp;
+                } else {
+                    reversed += " " + tmp;
+                }
+                tmp = "";
+            } else {
+                tmp = c + tmp;
+            }
+        }
+
+        if (reversed.isEmpty()) {
+            return tmp;
+        } else {
+            return reversed + " " + tmp;
+        }
+    }
+
     private static int charToInt(char c) {
         switch (c) {
             case '0': return 0;
