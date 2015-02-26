@@ -54,6 +54,23 @@ public class MyLinkedList {
         }
     }
 
+    public void reverse2() {
+        if (rootNode == null)
+            return;
+
+        MyLinkedListNode previous = null;
+        MyLinkedListNode current = rootNode;
+
+        do {
+            MyLinkedListNode next = current.getNextNode();
+            current.setNextNode(previous);
+            previous = current;
+            current = next;
+        } while (current != null);
+
+        rootNode = previous;
+    }
+
     public String toString() {
         if (rootNode == null)
             return null;
