@@ -55,18 +55,17 @@ public class MyLinkedList {
     }
 
     public String toString() {
-        if (rootNode == null) {
+        if (rootNode == null)
             return null;
-        } else {
-            String s = "";
-            MyLinkedListNode current = rootNode;
 
-            do {
-              s += current.getPayload();
-              current = current.getNextNode();
-            } while (current != null);
+        String s = "";
+        MyLinkedListNode current = rootNode;
 
-            return s;
-        }
+        do {
+            s += current.getPayload();
+            current = current.getNextNode();
+        } while (current != null);
+
+        return s;
     }
 }
