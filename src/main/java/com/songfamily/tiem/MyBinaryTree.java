@@ -1,7 +1,7 @@
 package com.songfamily.tiem;
 
 public class MyBinaryTree {
-    private MyBinaryTreeNode rootNode;
+    protected MyBinaryTreeNode rootNode;
 
     public MyBinaryTree() {
         rootNode = null;
@@ -11,7 +11,7 @@ public class MyBinaryTree {
         rootNode = insert(i, rootNode);
     }
 
-    private MyBinaryTreeNode insert(int i, MyBinaryTreeNode node) {
+    protected MyBinaryTreeNode insert(int i, MyBinaryTreeNode node) {
         if (node == null) {
             node = new MyBinaryTreeNode(i);
         } else {
