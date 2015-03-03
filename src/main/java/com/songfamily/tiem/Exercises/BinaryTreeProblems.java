@@ -58,4 +58,29 @@ public class BinaryTreeProblems extends MyBinaryTree {
         int rightMax = maxDepth(node.getRightChild());
         return 1 + Math.max(leftMax, rightMax);
     }
+
+    /*************************************************************************
+     * Problem 4
+     *************************************************************************/
+    public int minValue() {
+        return minValue(rootNode);
+    }
+
+    private int minValue(MyBinaryTreeNode node) {
+        if (node.getLeftChild() == null)
+            return node.getPayload();
+        else
+            return minValue(node.getLeftChild());
+    }
+
+    public int maxValue() {
+        return maxValue(rootNode);
+    }
+
+    private int maxValue(MyBinaryTreeNode node) {
+        if (node.getRightChild() == null)
+            return node.getPayload();
+        else
+            return maxValue(node.getRightChild());
+    }
 }

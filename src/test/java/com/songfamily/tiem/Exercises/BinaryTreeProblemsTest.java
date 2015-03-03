@@ -58,4 +58,23 @@ public class BinaryTreeProblemsTest {
         tree.insert(2);
         Assert.assertEquals(4, tree.maxDepth());
     }
+
+    @Test
+    public void testProblem4() throws Exception {
+        tree.insert(5);
+        Assert.assertEquals(5, tree.minValue());
+        Assert.assertEquals(5, tree.maxValue());
+
+        tree.insert(3);
+        tree.insert(7);
+        Assert.assertEquals(3, tree.minValue());
+        Assert.assertEquals(7, tree.maxValue());
+
+        tree.insert(2);
+        tree.insert(4);
+        tree.insert(6);
+        tree.insert(8);
+        Assert.assertEquals(2, tree.minValue());
+        Assert.assertEquals(8, tree.maxValue());
+    }
 }
