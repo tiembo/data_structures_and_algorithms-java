@@ -1,5 +1,6 @@
 package com.songfamily.tiem.Exercises;
 
+import com.songfamily.tiem.MyBinaryTreeNode;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -76,5 +77,38 @@ public class BinaryTreeProblemsTest {
         tree.insert(8);
         Assert.assertEquals(2, tree.minValue());
         Assert.assertEquals(8, tree.maxValue());
+    }
+
+    // all trees from http://cslibrary.stanford.edu/110/BinaryTrees.html#s2, problem 13
+    @Test
+    public void testProblem13And14() throws Exception {
+        MyBinaryTreeNode five = new MyBinaryTreeNode(5);
+        MyBinaryTreeNode two = new MyBinaryTreeNode(2);
+        MyBinaryTreeNode seven = new MyBinaryTreeNode(7);
+        MyBinaryTreeNode one = new MyBinaryTreeNode(1);
+        MyBinaryTreeNode six = new MyBinaryTreeNode(6);
+
+        // construct tree a
+        tree.rootNode = five;
+        five.setLeftChild(two);
+        five.setRightChild(seven);
+        Assert.assertTrue(tree.isBst());
+        Assert.assertTrue(tree.isBst2());
+
+        // construct tree b
+        five.setLeftChild(six);
+        Assert.assertFalse(tree.isBst());
+        Assert.assertFalse(tree.isBst2());
+
+        // construct tree c
+        five.setLeftChild(two);
+        two.setLeftChild(one);
+        Assert.assertTrue(tree.isBst());
+        Assert.assertTrue(tree.isBst2());
+
+        // construct tree d
+        two.setRightChild(six);
+        Assert.assertFalse(tree.isBst());
+        Assert.assertFalse(tree.isBst2());
     }
 }

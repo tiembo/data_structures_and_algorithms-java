@@ -83,4 +83,42 @@ public class BinaryTreeProblems extends MyBinaryTree {
         else
             return maxValue(node.getRightChild());
     }
+
+    /*************************************************************************
+     * Problem 13
+     *************************************************************************/
+    public boolean isBst() {
+        return isBst(rootNode);
+    }
+
+    private boolean isBst(MyBinaryTreeNode node) {
+        if (node == null)
+            return true;
+
+        if (node.getLeftChild() != null && maxValue(node.getLeftChild()) > node.getPayload())
+            return false;
+
+        if (node.getRightChild() != null && minValue(node.getRightChild()) <= node.getPayload())
+            return false;
+
+        return (isBst(node.getLeftChild()) && isBst(node.getRightChild()));
+    }
+
+    /*************************************************************************
+     * Problem 14
+     *************************************************************************/
+    public boolean isBst2() {
+        return isBst2(rootNode, Integer.MIN_VALUE, Integer.MAX_VALUE);
+    }
+
+    private boolean isBst2(MyBinaryTreeNode node, int min, int max) {
+        if (node == null)
+            return true;
+
+        if (node.getPayload() <= min || node.getPayload() >= max)
+            return false;
+
+        return (isBst2(node.getLeftChild(), min, node.getPayload())
+                && isBst2(node.getRightChild(), node.getPayload(), max));
+    }
 }
